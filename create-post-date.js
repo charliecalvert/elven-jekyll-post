@@ -40,12 +40,12 @@ async function createPostDateFileName(fileNameBase, ensure) {
     console.log('fileDate', fileDate);
     const fileName = format(`%s-${fileNameBase}.markdown`, fileDate);
 
-    if (ensure) {
+    /* if (ensure) {
         await ensureFileElf(fileName)
     }
 
     console.log('filename  in createPostDateFileName:', fileName);
-
+ */
     const dt = DateTime.now();
     const placeHolder = format(`%s`,
         //dt.toLocaleString(DateTime.DATE_SHORT),

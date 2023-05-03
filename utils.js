@@ -1,4 +1,4 @@
-import { readFileSync, openSync, writeSync, close, writeFileSync, unlink } from 'node:fs';
+import { readFileSync, openSync, writeSync, close, writeFileSync, unlinkSync } from 'node:fs';
 import { getFirstLineFromFile } from './getFirstLine.js';
 import { createPostDateFileName } from './create-post-date.js';
 
@@ -12,9 +12,9 @@ async function createBasePost(baseFileName) {
 
     console.log('fileName', baseFileName);
 
-    writeFileSync(baseFileName, '', 'utf8', 'a');
-    const firstLine = await getFirstLineFromFile(baseFileName);
-    return { fileName, firstLine, frontMatter }
+    // writeFileSync(baseFileName, '', 'utf8', 'a');
+    // const firstLine = await getFirstLineFromFile(baseFileName);
+    return { fileName, frontMatter }
 }
 
 /**
@@ -25,7 +25,7 @@ async function createBasePost(baseFileName) {
 function insertFrontMatter(fileName, frontMatter) {
     console.log('front matter:\n', frontMatter);
 
-    const data = readFileSync(fileName);
+    // const data = readFileSync(fileName);
     const fd = openSync(fileName, 'w+');
     const insert = Buffer.from(frontMatter);
     // console.log('buffer insert front matter\n', insert.length, insert);
@@ -48,9 +48,9 @@ function deleteFile(fileName) {
 }
 
 async function createJekyllPost(fileNamePart) {
-    const { fileName, firstLine, frontMatter } = await createBasePost(fileNamePart);
+    const { fileName, frontMatter } = await createBasePost(fileNamePart);
     insertFrontMatter(fileName, frontMatter);
-    deleteFile(fileNamePart);
+    // unlinkSync(fileNamePart);    
 }
 
 export { createBasePost, createJekyllPost, deleteFile, insertFrontMatter };
