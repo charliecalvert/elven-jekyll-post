@@ -1,15 +1,15 @@
-import { ensureFile } from 'fs-extra';
+// import { ensureFile } from 'fs-extra';
 import { DateTime } from 'luxon';
 import { format } from 'node:util';
 
-async function ensureFileElf(fileName) {
+/* async function ensureFileElf(fileName) {
     try {
         await ensureFile(fileName)
         console.log('Await Success!')
     } catch (err) {
         console.error(err)
     }
-}
+} */
 
 function formatDate(date, formatStr) {
     console.log('get day', date.getDate());

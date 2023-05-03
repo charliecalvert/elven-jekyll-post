@@ -10,6 +10,4 @@ async function run() {
     createJekyllPost(answer);
 }
 
-// await run();
-
 export default run;
