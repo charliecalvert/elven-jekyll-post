@@ -10,3 +10,5 @@ async function run() {
 }
 
 await run();
+
+export default run;
