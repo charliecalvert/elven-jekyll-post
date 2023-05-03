@@ -1,15 +1,15 @@
 {
   "name": "create-jekyll-post",
   "version": "1.0.0",
-  "description": "",
+  "description": "Create jekyl post",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Charlie Calvert <charlie@elveneare.com>",
+  "license": "MIT",
   "dependencies": {
     "@inquirer/prompts": "^1.0.0",
     "fs-extra": "^11.1.0",
