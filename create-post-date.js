@@ -46,6 +46,28 @@ async function createPostDateFileName(fileNameBase, ensure) {
 
     console.log('filename  in createPostDateFileName:', fileName);
  */
+    const frontMatter = buildFrontMatter(fileNameBase);
+
+    return { fileName, frontMatter }
+}
+
+/**
+ * build the Jekyll front matter
+ * @param {string} fileNameBase - The core filename on which to
+ * base the dated name
+ * @param {string} categories - The categories for the post
+ * @returns {string} return the front matter
+ * @example
+ * const frontMatter = buildFrontMatter('message01', 'misc');
+ * console.log(frontMatter);
+ * // ---   
+ * // layout: post
+ * // date: 2021-09-05 10:00:00 -04:00
+ * // title: message01
+ * // categories: misc
+ * // ---
+ */
+ function buildFrontMatter(fileNameBase, categories = 'misc') {
     const dt = DateTime.now();
     const placeHolder = format(`%s`,
         //dt.toLocaleString(DateTime.DATE_SHORT),
@@ -53,17 +75,16 @@ async function createPostDateFileName(fileNameBase, ensure) {
         dt.toFormat('yyyy-MM-dd hh:mm:ss ZZZ')
     );
 
-
     console.log(placeHolder);
 
     const frontMatter = format(`---
 layout: post
 date: %s
 title: %s
+categories: %s
 ---
-`, placeHolder, fileNameBase);
-
-    return { fileName, frontMatter }
+`, placeHolder, fileNameBase, categories);
+    return frontMatter;
 }
 
-export { createPostDateFileName };
+export { buildFrontMatter, createPostDateFileName };
