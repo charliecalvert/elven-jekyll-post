@@ -10,5 +10,5 @@ async function run() {
     createJekyllPost(answer);
 }
 
-export default run;
-export { buildFrontMatter, createPostDateFileName };
+// export default run;
+export { buildFrontMatter, createPostDateFileName, run };
