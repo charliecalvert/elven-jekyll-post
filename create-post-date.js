@@ -82,8 +82,8 @@ layout: post
 date: %s
 title: %s
 categories: %s
----
-`, placeHolder, fileNameBase, categories);
+---%s
+`, placeHolder, fileNameBase, categories, '\n');
     return frontMatter;
 }
 
