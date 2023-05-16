@@ -1,5 +1,11 @@
 # create-jekyl-post
 
+## Sample Usage
+
+``` bash
+npm i elven-jekyll-post
+```
+
 Example:
 
 ``` javascript
