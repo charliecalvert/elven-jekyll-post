@@ -1,0 +1,24 @@
+import {
+    getFrontMatterAndTocReport,
+    hasFrontMatter,
+    hasTocCode } from '../getFrontMatterAndTocReport';
+import createDebugMessages from 'debug';
+const debug = createDebugMessages('check-markdown');
+/***************
+ * test check-markdown
+ **************/
+
+describe('CheckMarkdown Both Suite', function () {
+  'use strict';
+  /* const debug = require('debug')('check-markdown');
+  const checkMarkdown = require('../CheckMarkdown'); */
+
+  const fileName = './test-data/About-both.md';
+
+  test('hasFrontMatter ()', async() => {
+    const result = await hasFrontMatter(fileName);
+    // "hasElfCode": true, "hasTocCode": true
+    expect(result).toBe(true);
+  });
+
+});
