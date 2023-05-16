@@ -1,4 +1,4 @@
-import elfUtils from 'elven-code/elf-utils';
+import { elfUtils } from 'elven-code';
 import createDebugMessages from 'debug';
 const debugCge = createDebugMessages('get-elf-code:cge');
 const debug = createDebugMessages('get-elf-code');
