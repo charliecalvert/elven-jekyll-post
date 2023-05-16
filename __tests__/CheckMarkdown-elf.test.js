@@ -38,5 +38,10 @@ const fileName = './test-data/About-elf.md';
     const result = await getFrontMatterAndTocReport(fileName);
     expect(result.markdown).not.toContain('margietitle: Hello');
   });
+
+  test('markdown frontmatter contents', async() => {
+    const result = await getFrontMatterAndTocReport(fileName);
+    expect(result.frontMatter.title).toBe("Hello");
+  });
 });
 

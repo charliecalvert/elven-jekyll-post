@@ -2,6 +2,7 @@ import { elfUtils } from 'elven-code';
 import createDebugMessages from 'debug';
 const debugCge = createDebugMessages('get-elf-code:cge');
 const debug = createDebugMessages('get-elf-code');
+import matter from 'gray-matter';
 
 function checkForToc(markdown, result) {
     const regexToc = /(?:<!-- toc(?:\s*stop)? -->)/g;
@@ -21,6 +22,7 @@ function checkForFrontMatter(markdown, result) {
     if (regexElf.test(markdown)) {
         debugCge('Has ELF code');
         result.hasFrontMatter = true;
+        result.frontMatter = matter(markdown).data;
     } else {
         debugCge('No ELF code');
         result.hasFrontMatter = false;
