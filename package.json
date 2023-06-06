@@ -11,12 +11,12 @@
   "author": "Charlie Calvert <charlie@elveneare.com>",
   "license": "MIT",
   "dependencies": {
-    "@inquirer/prompts": "^1.0.0",
-    "elven-code": "^4.13.8",
-    "fs-extra": "^11.1.0",
+    "@inquirer/prompts": "^2.1.0",
+    "elven-code": "^4.14.2",
+    "fs-extra": "^11.1.1",
     "gray-matter": "^4.0.3",
-    "luxon": "^3.2.1",
-    "walk-directories": "^4.1.1"
+    "luxon": "^3.3.0",
+    "walk-directories": "^4.2.0"
   },
   "devDependencies": {
     "jest": "^29.5.0"
