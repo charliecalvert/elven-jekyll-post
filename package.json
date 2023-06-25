@@ -1,5 +1,5 @@
 {
-  "name": "elven-jekyll-post",
+  "name": "create-jekyll-post",
   "version": "1.2.3",
   "description": "Create jekyl post",
   "main": "index.js",
@@ -11,7 +11,7 @@
   "author": "Charlie Calvert <charlie@elveneare.com>",
   "license": "MIT",
   "dependencies": {
-    "@inquirer/prompts": "^2.1.0",
+    "@inquirer/prompts": "^2.2.0",
     "elven-code": "^4.14.2",
     "fs-extra": "^11.1.1",
     "gray-matter": "^4.0.3",

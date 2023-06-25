@@ -16,6 +16,13 @@ function checkForToc(markdown, result) {
     return result;
 }
 
+/**
+ * Read a file and check if it has front matter
+ * Use regex to do the actual check
+ * @param {string} fileName
+ * @returns {Promise<boolean>}
+ * @see hasFrontMatter
+ */
 function checkForFrontMatter(markdown, result) {
     const regexElf = /^---/;
     // const regexElf = /(?:<!-- bar(?:\s*stop)? -->)/g;
@@ -38,6 +45,14 @@ async function hasTocCode(fileName) {
     return result.hasTocCode;
 }
 
+/**
+ * Read a file and check if it has front matter
+ * Use checkForFrontMatter to do the actual check
+ * @param {string} fileName
+ * @returns {Promise<boolean>}
+ * @see checkForFrontMatter
+ * @see __tests__/CheckMarkdown-elf.test.js
+ */
 async function hasFrontMatter(fileName) {
     const result = {};
     const markdown = await elfUtils.readFileAsync(fileName);
