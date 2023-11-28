@@ -4,6 +4,15 @@ const debugCge = createDebugMessages('get-elf-code:cge');
 const debug = createDebugMessages('get-elf-code');
 import matter from 'gray-matter';
 
+/**
+ * Read a file and check if it has TOC code
+ * Use regex to do the actual check
+ * @param {string} markdown - markdown file contents as a string
+ * @returns {Promise<boolean>}
+ * @see hasTocCode
+ * @see __tests__/CheckMarkdown-toc.test.js
+ * @see __tests__/CheckMarkdown-elf.test.js
+ */
 function checkForToc(markdown, result) {
     const regexToc = /(?:<!-- toc(?:\s*stop)? -->)/g;
     if (regexToc.test(markdown)) {
@@ -37,6 +46,15 @@ function checkForFrontMatter(markdown, result) {
     return result;
 }
 
+/**
+ * Read a file and check if it has TOC code
+ * Use checkForToc to do the actual check
+ * @param {string} fileName
+ * @returns {Promise<boolean>}
+ * @see checkForToc
+ * @see __tests__/CheckMarkdown-toc.test.js
+ * @see __tests__/CheckMarkdown-elf.test.js
+ */
 async function hasTocCode(fileName) {
     const result = {};
     const markdown = await elfUtils.readFileAsync(fileName);
@@ -61,6 +79,15 @@ async function hasFrontMatter(fileName) {
     return result.hasFrontMatter;
 }
 
+/**
+ * Read a file and check if it has front matter
+ * Use checkForFrontMatter to do the actual check
+ * @param {string} fileName
+ * @returns {Promise<boolean>}
+ * @see checkForFrontMatter
+ * @see __tests__/CheckMarkdown-elf.test.js
+ * @see __tests__/CheckMarkdown-toc.test.js
+ */
 async function getFrontMatterAndTocReport(fileName) {
     const result = {};
 
